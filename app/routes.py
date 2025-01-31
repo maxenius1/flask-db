@@ -9,6 +9,7 @@ def index():
 @app.route("/subscribe",methods=['POST'])
 def subscribe():
     email = request.form['email']
+    app.logger.info(email)
     new_subscription = Subscription(email=email)
     db.session.add(new_subscription)
     db.session.commit
