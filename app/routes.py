@@ -12,7 +12,7 @@ def subscribe():
     app.logger.info(email)
     new_subscription = Subscription(email=email)
     db.session.add(new_subscription)
-    db.session.commit
+    db.session.commit()
     flash("Subscription successful!","success")
     return redirect(url_for('index'))
 
